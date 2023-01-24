@@ -1,25 +1,78 @@
-#sw 중문제
-
-# T= int(input())
-# result=[]
-# for i in range(T):
-#     a = int(input())
-#     b=[]
-#     for i in range(a):
-#         b.append(list(map(str,input().split())))
-#     for i in range(a):
-#         print(b[2][0]+b[1][0]+b[0][0])
+# 1
+# N = int(input())
 #
-#     print(f'#{i+1}')
-#     print()
-# 필터써보기
-# -----------------------------------
+# lst=[]
+#
+# for i in range(1,N+1):
+#     if N%i==0:
+#         lst.append(i)
+# sorted(lst)
+# print(lst)
 
-stake = 50000
-vat = 0.15
-print(f"""stake{stake:>8}
-+VAT{round(vat*stake):>8}
-총계￦{round(stake*vat+stake):>8}
-""")
+# 2
+# a_lst=list(map(int,input().split()))
+# a_sum=0
+# for i in a_lst:
+#     a_sum+= i
+# print(a_sum)
 
-print(}')
+# 3
+# dic=[{'name':'kim','age':12},{'name':'lee','age':4}]
+# dic_sum=0
+# for i in range(len(dic)):
+#     dic_sum+=dic[i]['age']
+# print(dic_sum)
+
+# 4
+# lst = [[1],[2,3],[4,5,6],[7,8,9,10]]
+# def all_list_sum(a):
+#     all = 0
+#     for i in range(len(a)):
+#         for j in range(len(a[i])):
+#             all += a[i][j]
+#     return all
+# print(all_list_sum(lst))
+
+# 5
+
+# lst=[83,115,65,102,89]
+# def get_secret_word(a):
+#     result= ""
+#     for i in a:
+#         result+=chr(i)
+#     return result
+#
+# print(get_secret_word(lst))
+
+# 6
+
+# def get_secret_number(a):
+#     result = 0
+#     for i in a:
+#         result += ord(i)
+#     return result
+# print(get_secret_number('happy'))
+
+# 7
+
+# def get_strong_word(a,b):
+#     a_sum=0
+#     b_sum=0
+#     for i in a:
+#         a_sum += ord(i)
+#     for j in b:
+#         b_sum += ord(j)
+#     if a_sum > b_sum:
+#         return a
+#     elif b_sum > a_sum:
+#         return b
+#     elif a_sum==b_sum:
+#         return a,b
+#
+# print(get_strong_word('delilah','delilah'))
+
+user_data1 = {
+    'id': 'jungssafy5',
+    'password': '1q2w3e4r',
+}
+print(user_data1['id'][-1])

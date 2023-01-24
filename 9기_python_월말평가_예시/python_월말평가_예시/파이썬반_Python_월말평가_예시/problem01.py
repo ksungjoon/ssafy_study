@@ -1,6 +1,10 @@
 def max_score(scores):
     pass
-    # 여기에 코드를 작성합니다.
+    a=0
+    for i in scores:
+        if i>=a:
+            a = i
+    return a
 
 
 # 아래의 코드는 수정하지 않습니다.

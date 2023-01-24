@@ -1,6 +1,10 @@
 def is_id_valid(user_data):
     pass
-    # 여기에 코드를 작성합니다.
+    result = 0
+    for i in range(10):
+        if user_data['id'][-1] == str(i):
+            result += 1
+    return bool(result)
 
 
 # 아래의 코드는 수정하지 않습니다.
