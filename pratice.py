@@ -84,7 +84,106 @@
 #     b = str(input())
 #     return b
 # print(one(),two(),sep='')
-lst = [[0]*4 for _ in range(4)]
-N = int(input())
-for i in range(4):
-    lst[i].
+#
+# lst = [[' ']*3 for _ in range(3)]
+import random
+
+
+# 나의 국적은 대한민국
+#
+# class Calculator:
+#     def __init__(self,first,second):
+#         self.first = first
+#         self.second = second
+#     def add(self):
+#         result = self.first + self.second
+#         return result
+#     def substract(self):
+#         result = self.first - self.second
+#         return result
+#     def multuply(self):
+#         result = self.first * self.second
+#         return result
+#     def divde(self):
+#         try:
+#             result = self.first / self.second
+#             return result
+#         except ZeroDivisionError:
+#             print('0으로 나눌 수 없습니다.')
+#
+# a= Calculator(1,2)
+# b= Calculator(2,1)
+# c= Calculator(3,4)
+# d= Calculator(4,0)
+# print(a.add())
+# print(b.substract())
+# print(c.multuply())
+# print(d.divde())
+
+
+# class ClassHelper:
+#     import random
+#     def __init__(self,lst):
+#         self.lst = lst
+#     def pick(self,n):
+#         return random.sample(self.lst,n)
+#
+#     def match_pair(self):
+#         match_list = self.lst[:]
+#         random.shuffle(match_list)
+#         result = []
+#         while match_list:
+#             if len(match_list) > 3:
+#                 pair = [match_list.pop(0), match_list.pop(0)]
+#             else:
+#                 pair = match_list[:]
+#                 match_list.clear()
+#             result.append(pair)
+#         return result
+#
+# ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
+# print(ch.pick(1))
+# print(ch.pick(1))
+# print(ch.pick(2))
+# print(ch.pick(3))
+# print(ch.pick(4))
+#
+# print(ch.match_pair())
+
+# class Doggy:
+#     num_of_dogs = 0
+#     birth_of_dogs = 0
+#     def __init__(self,name,sort):
+#         self.name = name
+#         self.sort = sort
+#         Doggy.birth_of_dogs += 1
+#         Doggy.num_of_dogs += 1
+#     def bark(self):
+#         return (f'{self.name}는 짖는다.')
+#
+#     def get_status(self):
+#         return(f'태어난 개 숫자:{self.birth_of_dogs},현재있는 개 숫자:{self.num_of_dogs}')
+#     def del_dog(self):
+#         Doggy.num_of_dogs -= 1
+#         del self
+#
+# dog1 = Doggy('뽀삐','포메')
+# dog2 = Doggy('초록','골든리트리버')
+# dog3 = Doggy('노랑','진돗개')
+# dog4 = Doggy('빨강','시바')
+# print(dog2.bark())
+# dog2.del_dog()
+# print(dog4.get_status())
+
+# lst = [['0']*5 for _ in range(5)]
+# a,b = map(str,input().split())
+# for i in reversed(range(5)):
+#     lst[int(a)-1][i] = b
+#     new_b = ord(b)+1
+#     b = chr(new_b)
+# for i in range(5):
+#     print(*lst[i],sep='')
+
+N = input()
+
+print(f'{len(N)}글자')
