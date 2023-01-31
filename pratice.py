@@ -184,6 +184,47 @@ import random
 # for i in range(5):
 #     print(*lst[i],sep='')
 
-N = input()
 
-print(f'{len(N)}글자')
+class PublicTransport:
+    passenger = 0
+    result = 0
+    def __init__(self,name,fare):
+        self.name = name
+        self.fare = fare
+    def get_in(self):
+        PublicTransport.passenger += 1
+        PublicTransport.result += 1
+        return PublicTransport.passenger
+    def get_off(self):
+        PublicTransport.passenger -= 1
+        return PublicTransport.passenger
+    def profit(self):
+        PublicTransport.result *= self.fare
+        return PublicTransport.result
+
+class Bus(PublicTransport):
+    pull = 3
+    def get_in(self):
+        if PublicTransport.passenger == 3:
+            return('더이상 탑승할 수 없습니다.')
+        else:
+            PublicTransport.passenger += 1
+            PublicTransport.result += 1
+            return PublicTransport.passenger
+
+
+a= Bus('kevin',600)
+b= Bus('plus',600)
+c= Bus('minun',600)
+d= Bus('ksdfn',600)
+e= Bus('shtfhtdf',600)
+f= Bus('sdfff',600)
+g= Bus('sdfdf',600)
+
+print(a.get_in())
+print(b.get_off())
+print(f.get_in())
+print(g.get_in())
+print(c.get_in())
+print(d.get_in())
+print(d.profit())

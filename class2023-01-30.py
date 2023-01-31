@@ -286,5 +286,3 @@ make_pie.create('tom')
 make_pie.create('bob')
 make_pie.number_of_pie()
 
-# 속성은
-#
