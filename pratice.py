@@ -84,7 +84,9 @@
 #     b = str(input())
 #     return b
 # print(one(),two(),sep='')
-lst = [[0]*4 for _ in range(4)]
-N = int(input())
-for i in range(4):
-    lst[i].
+lst =[3,5,1,2,7]
+lst_input=list(map(int,input().split()))
+if  lst == lst_input:
+    print('두배열은완전같음')
+else:
+    print('두배열은같지않음')
