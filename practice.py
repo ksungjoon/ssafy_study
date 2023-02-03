@@ -1,35 +1,32 @@
-# lst1  = list(map(int,input().split()))
-# lst2 = [[0]*3for i in range(2)]
-# a = 0
-# Max = 0
-# Min = lst1[0]
-# for i in lst1:
-#     if Max < i:
-#         Max = i
-#     if Min > i:
-#         Min = i
-# for j in range(2):
-#     for k in range(3):
-#         lst2[j][k] = lst1[a]
-#         a += 1
-#         if lst2[j][k] == Max:
-#             print(f'({j},{k})')
-#         if lst2[j][k] == Min:
-#             print(f'({j},{k})')
-map1 =[[3,55,42],[-5,-9,-10]]
-pix = [list(map(int,input().split()))for i in range(2)]
-def findnum(value):
-      for i in range(2):
-            for j in range(3):
-                  if map1[i][j]==value:
-                        return 1
-      return 0
+#
+# lst = [['A','B','C'],['A','G','H'],['H','I','J'],['K','A','B'],['A','B','C']]
+# bucket =[0] * 26
+# result = [0]* 15
+# for i in range(5):
+#     for j in range(3):
+#         bucket[ord(lst[i][j])-65] += 1
+# for j in range(len(bucket)-1):
+#     bucket[j+1] = bucket[j]+bucket[j+1]
+# for i in range(5):
+#     for j in range(3):
+#         result[bucket[ord(lst[i][j])-65]-1] = lst[i][j]
+#         bucket[ord(lst[i][j]) - 65] -= 1
+# print(*result,sep='')
 
-for i in range(2):
-      for j in range(2):
-            ret=findnum(pix[i][j])
-            if ret:
-                  print('Y',end=' ')
-            else:
-                  print('N',end=' ')
-      print()
+T = int(input())
+for test_case in range(1, T + 1):
+    a,b = map(int,input().split())
+    lst = list(map(int,input().split()))
+    result = []
+    c = 0
+    d = 0
+    for i in range(a-b+1):
+        for j in range(c,c+b):
+            d += lst[j]
+        result.append(d)
+        d = 0
+        c += 1
+    y = max(result)-min(result)
+    print(f'#{test_case} {y}')
+
+
