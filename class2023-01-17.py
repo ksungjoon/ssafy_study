@@ -199,18 +199,18 @@
 # ret= getsum(6,5,6)
 # print(ret)
 # 패킹
-# num=[1,2,3,4,5]
-# num2=(1,2,3,4,5)
-# print(num,num2)
+num=[1,2,3,4,5]
+num2=(1,2,3,4,5)
+print(num,num2)
 # # 언패킹
-# a,b,c,d,e=num
-# print(a,b,c,d,e)
-# a,b,c,d,e=num2
-# print(a,b,c,d,e)
-# a,b,*c=num
-# print(c)
-# a,b,*c=num2
-# print(c)
+a,b,c,d,e=num
+print(a,b,c,d,e)
+a,b,c,d,e=num2
+print(a,b,c,d,e)
+a,b,*c=num
+print(c)
+a,b,*c=num2
+print(c)
 
 #아스트리스크 *
 #아스트랄 *

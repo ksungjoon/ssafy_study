@@ -154,24 +154,26 @@ person1.number_of_population()
 # 예를들어 자동차를 생성하는 클래스를 만들고 자동차 가격의 합을
 # 사용자가 쉽게 출력할 수 있도록 해보겠다.
 
-# class car:
-#     def __init__(self,name,price):
-#         self.name=name
-#         self.price=price
-#     def __add__(self, another):
-#         return  self.price + another.price
-#     def __str__(self):
-#         return (f'{self.name}의 가격은 {self.price}입니다.')
-#
-# kia=car('k8',300)
-# bmw=car('m5',500)
-# # print(kia.price+bmw.price)
+class car:
+    def __init__(self,name,price):
+        self.name=name
+        self.price=price
+    def __add__(self, another):
+        return  self.price + another.price
+    def __str__(self):
+        return (f'{self.name}의 가격은 {self.price}입니다.')
+
+kia=car('k8',300)
+bmw=car('m5',500)
+print(kia+bmw)
 #
 # # add 라는 매직매서드를 커스터마이징 해서 덧셈 연산을 지원하도록 하겠다.
 # print(kia+bmw) # 커스터마이징 할 것이다!! 이거 지금 출력하면 버그
 #
 #
-# print(kia)
+
+print(kia)
+print(kia,bmw)
 #
 # del kia # 인스턴스 삭제
 # del bmw

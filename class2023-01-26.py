@@ -26,13 +26,13 @@ import copy
 # new_tuple  = my_tuple[3: -1]
 # print(new_tuple)
 
-# 깊은 복사하는법  import copt
+# 깊은 복사하는법  import copy
 # copy.deepcopy()
 # deepcopy 안쓰고 깊복 하는법
-# a=[1, 2, ['a' ,'b']]
-# b=a[0:2]+[a[2][:]]
-# b[0]= 0
-# print(a,b)
+a=[1, 2, ['a' ,'b']]
+b=a[0:2]+[a[2][:]]
+b[0]= 0
+print(a,b)
 
 # test_list = [1,2,3,8,2,4,7]
 # test_list.sort()
