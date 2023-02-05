@@ -8,21 +8,21 @@
 
 # import sys
 # sys.stdin = open('input.txt','r')
-# T = int(input())
-# for test_case in range(1, T +1):
-#     N = int(input())
-#
-#     cnts =[0]*5001
-#     for _ in range(N):
-#         S,E = map(int,input().split())
-#         for i in range(S, E+1):
-#             cnts[i] += 1
-#     P = int(input())
-#     alst = []
-#     for _ in range(P):
-#         p = int(input())
-#         alst .append(cnts[p])
-#     print(f'#{test_case}',*alst)
+T = int(input())
+for test_case in range(1, T +1):
+    N = int(input())
+
+    cnts =[0]*5001
+    for _ in range(N):
+        S,E = map(int,input().split())
+        for i in range(S, E+1):
+            cnts[i] += 1
+    P = int(input())
+    alst = []
+    for _ in range(P):
+        p = int(input())
+        alst .append(cnts[p])
+    print(f'#{test_case}',*alst)
 #-----------------------------------------
 # 1945 간단한 소인수 분해
 # divs = [2,3,5,7,11]
@@ -53,7 +53,7 @@
 #                 ans =cnt
 #     print(f'#{test_case}',ans)
 # -----------------------------------------
-# 입력받은 두개의 인데슥 범위 내에서 1차원 문자 배열을 회전 시켜주세요
+# 입력받은 두개의 인덱스 범위 내에서 1차원 문자 배열을 회전 시켜주세요
 # 내가 푼거
 # import copy
 # lst = ['T','B','T','S','A','K','L','I','Z','C']
@@ -68,25 +68,25 @@
 #
 # 교수님이 푼거
 
-arr=['T','B','T','S','A','K','L','I','Z','C']
-index=list(map(int,input().split()))
+# arr=['T','B','T','S','A','K','L','I','Z','C']
+# index=list(map(int,input().split()))
 
-def LMove(st,ed):
-    temp=arr[st]
-    for i in range(st,ed,1):
-        arr[i]=arr[i+1]
-    arr[ed]=temp
-
-def RMove(st,ed):
-    temp=arr[ed]
-    for i in range(ed,st,-1):
-        arr[i]=arr[i-1]
-    arr[st]=temp
-
-for i in range (2):
-    RMove(index[0],index[1])
-
-print(*arr)
+# def LMove(st,ed):
+#     temp=arr[st]
+#     for i in range(st,ed,1):
+#         arr[i]=arr[i+1]
+#     arr[ed]=temp
+#
+# def RMove(st,ed):
+#     temp=arr[ed]
+#     for i in range(ed,st,-1):
+#         arr[i]=arr[i-1]
+#     arr[st]=temp
+#
+# for i in range (2):
+#     RMove(index[0],index[1])
+#
+# print(*arr)
 
 #--------------------------------------
 # 시험힌트
