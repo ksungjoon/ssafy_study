@@ -44,8 +44,10 @@
 # abc(0,n)
 
 # 3,7,12,13,19,28, 출력하기 (누적합)
+
+
 # 전역변수
-arr= [3,4,5,1,6,9]
+# arr= [3,4,5,1,6,9]
 # sum =arr[0]
 # def abc(lev):
 #     global sum
@@ -55,6 +57,8 @@ arr= [3,4,5,1,6,9]
 #     sum += arr[lev+1]
 #     abc(lev+1)
 # abc(0)
+
+
 # 지역변수
 # def abc(lev,sum):
 #     print(sum)
@@ -66,6 +70,7 @@ arr= [3,4,5,1,6,9]
 # 28 19 13 12 7 3 출력하기 (누적합)
 # accumulated sum 누적합
 
+arr= [3,4,5,1,6,9]
 # 1. sum 매개변수 (지역변수로 활용)
 # def abc(lev,sum):
 #     if lev == 5:
@@ -76,14 +81,35 @@ arr= [3,4,5,1,6,9]
 # abc(0,arr[0])
 
 # 2. sum 전역변수 (globals활용)
-sum = arr[0]
-def abc(lev):
-    global sum
-    if lev == 5:
-        print(sum)
-        return
-    sum += arr[lev+1]
-    abc(lev+1)
-    print(sum)
-abc(0)
+# sum = arr[0]
+# def abc(lev):
+#     global sum
+#     if lev == 5:
+#         print(sum)
+#         return
+#     sum += arr[lev+1]
+#     abc(lev+1)
+#     sum -= arr[lev+1]
+#     print(sum)
+# abc(0)
 
+# def abc(level):
+#     if level ==2:
+#         return
+#     for i in range(2):
+#         abc(level+1)
+#     dummy= 1
+# abc(0)
+
+# def abc(level):
+#     print('1',end='')
+#     if level==2:
+#         print('2',end='')
+#         return
+#     print('3',end='')
+#     for i in range(2):
+#         print('4',end='')
+#         abc(level+1)
+#         print('5',end='')
+#     print('6',end='')
+# abc(0)
