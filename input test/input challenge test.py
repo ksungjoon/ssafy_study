@@ -22,7 +22,7 @@ print(st)
 #
 # 2.아래에 정답을 입력하시오
 N = int(input())
-A, B, C =map(int,input().split())
+A,B,C = map(int,input().split())
 print(N)
 print(A,B,C)
 #
@@ -37,7 +37,7 @@ print(A,B,C)
 #
 # 3.아래에 정답을 입력하시오
 F = float(input())
-A, B, C = map(float,input().split())
+A,B,C = map(float,input().split())
 print(F)
 print(A,B,C)
 #
@@ -75,7 +75,7 @@ print(lst)
 # 1234
 #
 # 6.아래에 정답을 입력하시오
-lst = list(input())
+lst = list(map(int,input()))
 print(lst)
 #
 #
@@ -92,8 +92,8 @@ print(lst)
 # 1000
 #
 # 7.아래에 정답을 입력하시오
-N = int(input())
-lst= [list(map(int,input())) for i in range(N)]
+N=int(input())
+lst = [list(map(int,input()))for i in range(N)]
 print(N)
 print(lst)
 #
@@ -111,8 +111,8 @@ print(lst)
 # 13 14 15 16
 #
 # 8.아래에 정답을 입력하시오
-N = int(input())
-lst= [list(map(int,input().split())) for i in range(N)]
+N= int(input())
+lst =[list(map(int,input().split()))for i in range(N)]
 
 print(N)
 print(lst)
@@ -132,7 +132,7 @@ print(lst)
 #        [0, 0, 0]]
 #
 # 10.아래에 정답을 입력하시오
-arr = [[0]*3 for i in range(3)]
+arr = [[0]*3for i in range(3)]
 print(arr)
 #
 #
