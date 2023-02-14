@@ -1,15 +1,13 @@
-T = 10
-
-for test_case in range(1,T+1):
-    N = int(input())
-    lst = [list(map(str,input()))for i in range(100)]
-    a = []
-    result =0
-    max = 0
-    for k in range(100):
-        for i in range(100):
-            for j in range(100-i):
-                a.append(lst[k][i+j])
-            if a==a[::-1]and max<len(a):
-                max = len(a)
-                result = len(a)
+lst = list(map(str,input()))
+count = 0
+def abc (lev):
+    global count
+    if lev == 4:
+        count+=1
+        return
+    for i in range(4):
+        if lst[i] == 'B' and lst[i+1]=='T':continue
+        if lst[i] == 'T' and lst[i + 1] == 'B': continue
+        abc(lev+1)
+abc(0)
+print(count)

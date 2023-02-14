@@ -32,7 +32,7 @@
 #
 # abc(0)
 
-# 1번째 2나오는 거제거 다음 가지에 진입을 안하는 경우
+# 1번째 2나오는거 제거 다음 가지에 진입을 안하는 경우
 # n = 3
 # dice = [1,2,3,4]
 # path = ['']*n
@@ -129,7 +129,7 @@
 # lst = ['A', 'B', 'C','D']
 # path = [''] * n
 
-#진입하고 return하는 경우
+# 진입하고 return하는 경우
 # def abc(lev):
 #     if lev > 1 and path[lev-1]==path[lev-2]:return
 #     if lev == 3:
@@ -139,7 +139,7 @@
 #         path[lev] = lst[i]
 #         abc(lev + 1)
 #
-#
+# #
 # abc(0)
 # 진입을 아예안하는 경우
 # def abc(lev):
@@ -171,7 +171,7 @@
 #         path[level]=candidates[i]
 #         abc(level+1)
 # abc(0)
-#
+# #
 # # for문을 시작하는 i를 바꿔서 조합 구현
 #
 # candidates=['A','B','C','D']
@@ -240,31 +240,31 @@
 
 #문자를 하나 입력받아 주세요
 # 그리고 입력받은 문자의 형제노드를 출력해 주세요
-people =['A','B','C','D','E','F']
-arr = [[0,1,1,0,0,0],
-       [0,0,0,1,1,0],
-       [0,0,0,0,0,1],
-       [0,0,0,0,0,0],
-       [0,0,0,0,0,0],
-       [0,0,0,0,0,0]]
-num = 0
-st = input()
-for i in range(len(people)):
-    if st == people[i]:
-        num =i
-parent = -1
-result = []
-for i in range(6):
-    if arr[i][num] == 1:
-        parent = i
-for j in range(6):
-    if arr[parent][j]==1 and j != num :
-        result.append(j)
-if parent == -1:
-    print('형제 없음')
-elif result==[]:
-    print('형제 없음')
-else:
-    for i in result:
-        print(people[i],end=' ')
-
+# people =['A','B','C','D','E','F']
+# arr = [[0,1,1,0,0,0],
+#        [0,0,0,1,1,0],
+#        [0,0,0,0,0,1],
+#        [0,0,0,0,0,0],
+#        [0,0,0,0,0,0],
+#        [0,0,0,0,0,0]]
+# num = 0
+# st = input()
+# for i in range(len(people)):
+#     if st == people[i]:
+#         num =i
+# parent = -1
+# result = []
+# for i in range(6):
+#     if arr[i][num] == 1:
+#         parent = i
+# for j in range(6):
+#     if arr[parent][j]==1 and j != num :
+#         result.append(j)
+# if parent == -1:
+#     print('형제 없음')
+# elif result==[]:
+#     print('형제 없음')
+# else:
+#     for i in result:
+#         print(people[i],end=' ')
+#
