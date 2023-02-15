@@ -1,13 +1,11 @@
-lst = list(map(str,input()))
-count = 0
-def abc (lev):
-    global count
-    if lev == 4:
-        count+=1
-        return
-    for i in range(4):
-        if lst[i] == 'B' and lst[i+1]=='T':continue
-        if lst[i] == 'T' and lst[i + 1] == 'B': continue
-        abc(lev+1)
-abc(0)
-print(count)
+lst = [list(map(int,input().split()))for i in range(3)]
+resultx=[]
+resulty=[]
+for i in range(3):
+    resultx.append(lst[i][0])
+    resulty.append(lst[i][1])
+if len(set(resultx))==3 and len(set(resulty))==3:
+    print('안전')
+else:
+    print('위험')
+
