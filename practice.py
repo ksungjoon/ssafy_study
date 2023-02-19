@@ -1,22 +1,41 @@
-# T =int(input())
-# for test_case in range(1,T+1):
-# 알고리즘 스터디 문제
-# white = [[0]*100 for i in range(100)]
-# n= int(input())
-# sum=0
-# lst =[list(map(int,input().split()))for i in range(n)]
-#
-# for i in range(n):
-#     for j in range(10):
-#         for k in range(10):
-#             white[lst[i][0]+j-1][lst[i][1]+k-1]=1
-#
-# for i in range(100):
-#     for j in range(100):
-#         sum += white[i][j]
-# print(sum)
-
+# T = int(input())
+# for test_case in range(1, T + 1):
+#     word = input()
+#     stack=[]
+#     for i in word:
+#         if i == '(' or i == '{':
+#             stack.append(i)
+#         elif i ==')' or i =='}':
+#             if len(stack) == 0:
+#                 stack.append(i)
+#                 break
+#             elif stack[-1] == '(' and i ==')':
+#                 stack.pop()
+#             elif stack[-1]=='{' and i =='}':
+#                 stack.pop()
+#             else:
+#                 stack.append(i)
+#                 break
+#     if len(stack)==0:
+#         print(f'#{test_case} 1')
+#     else:
+#         print(f'#{test_case} 0')
 
 T = int(input())
-
-for test_case in range(1, T + 1):
+for test_case in range(1,T+1):
+    word = input()
+    stack = []
+    for i in word:
+        if i == '(' or i== '{':
+            stack.append(i)
+        elif i =='}' or i==')':
+            if len(stack)==0:
+                stack.append(i)
+                break
+            elif i=='}' and stack[-1]=='{':
+                stack.pop()
+            elif i =='(' and stack[-1]==')':
+                stack.pop()
+            else:
+                stack.append(i)
+                break
