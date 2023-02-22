@@ -164,7 +164,7 @@ from collections import deque
 
 
 # bfs 연습
-# name = ['A','B','C','E','D','F']
+# name = ['A','B','C','D','E','F']
 # arr = [[0,1,0,1,0,0],
 #        [0,0,1,0,1,0],
 #        [0,0,0,0,0,0],
@@ -189,10 +189,10 @@ from collections import deque
 #
 # BFS
 # tree 모형이 아닌 graph
-from collections import deque
+# from collections import deque
 # name = ['A','B','C','D']
 # arr = [[0,1,1,0],
-#        [0,1,0,1],
+#        [0,0,0,1],
 #        [0,1,0,1],
 #        [0,0,0,0]]
 # used = [0]*4
@@ -214,31 +214,31 @@ from collections import deque
 # print(answer)
 
 
-from collections import deque
-n=int(input()) # 3
-y,x=map(int,input().split())  # 1,1 민들레 꽃씨가 떨어지는 좌표 입력
-arr=[[0]*n for _ in range(n)]  # 3*3 배열 선언
-
-arr[y][x]=1
-q=deque()
-q.append([y,x])   # 시작 좌표값 넣기
-while q:
-    now=q.popleft()
-    nowy,nowx=now[0],now[1]   # 현재의 좌표값
-    directy=[-1,1,0,0]
-    directx=[0,0,-1,1]
-    for i in range(4):
-        dy=nowy+directy[i]
-        dx=nowx+directx[i]
-        if 0<=dy<n and 0<=dx<n: # 배열의 범위를 벗어나지 않는다면
-            if arr[dy][dx]==0:  # 꽃이 아직 피지 않은 곳이라면 (중복체크)
-                arr[dy][dx]=arr[y][x]+1
-                q.append([dy,dx])
-
-for i in arr:
-    print(*i)
-
-
+# from collections import deque
+# n=int(input()) # 3
+# y,x=map(int,input().split())  # 1,1 민들레 꽃씨가 떨어지는 좌표 입력
+# arr=[[0]*n for _ in range(n)]  # 3*3 배열 선언
+#
+# arr[y][x]=1
+# q=deque()
+# q.append([y,x])   # 시작 좌표값 넣기
+# while q:
+#     now=q.popleft()
+#     nowy,nowx=now[0],now[1]   # 현재의 좌표값
+#     directy=[-1,1,0,0]
+#     directx=[0,0,-1,1]
+#     for i in range(4):
+#         dy=nowy+directy[i]
+#         dx=nowx+directx[i]
+#         if 0<=dy<n and 0<=dx<n: # 배열의 범위를 벗어나지 않는다면
+#             if arr[dy][dx]==0:  # 꽃이 아직 피지 않은 곳이라면 (중복체크)
+#                 arr[dy][dx]=arr[y][x]+1
+#                 q.append([dy,dx])
+#
+# for i in arr:
+#     print(*i)
+#
+#
 
 
 
