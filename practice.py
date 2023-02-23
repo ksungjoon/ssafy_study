@@ -1,18 +1,20 @@
-arr = [[0,0,1,1,0,1],
-       [0,0,0,1,1,1],
-       [0,0,0,0,1,1],
-       [0,0,0,0,0,0],
-       [1,0,0,0,0,1],
-       [0,0,0,0,0,0]]
-used = [0]*6
-def abc(lev):
-    if lev ==5:
-        return
-    print(lev, end=' ')
-    for i in range(6):
-        if arr[lev][i]==1:
-            if used[i]==0:
+# T = int(input())
+# for test_case in range(1,T+1):
+#     N =int(input())
+#     lst = list(map(int,input().split()))
+#     def abc(lst):
+#
 
-                used[i]=1
-                abc(i)
-abc(0)
+
+
+n = int(input())
+lst =['B','I','A','H']
+result = []
+pop_lst=[]
+while lst:
+    
+
+#     result.append(lst[n%len(lst)-1])
+#     lst.pop(n%len(lst)-1)
+# print(result)
+

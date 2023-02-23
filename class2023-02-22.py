@@ -118,7 +118,7 @@
 #     if ret==1:
 #         answer='발견'
 #         break
-print(answer)
+# print(answer)
 
 
 
