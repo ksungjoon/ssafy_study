@@ -34,7 +34,7 @@
 
 # 구간합
 # sliding window
-# prefix xum
+# prefix sum
 # two pointer
 # n개의 숫자 연속된 m개의 숫자의 합이 max
 # sliding window
