@@ -160,7 +160,7 @@
 # def abc(level):
 #
 #     if level==3:
-#         for i in range(level):
+#         for i in range(level):00
 #             print(path[i],end=' ')
 #         print()
 #         return
