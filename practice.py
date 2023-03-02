@@ -60,31 +60,34 @@
 #     print(max_cnt)
 #
 # -----------------------------------------------
-# T = int(input())
-# for test_case in range(1,T+1):
-#     N,M = map(int,input().split())
-#     lst=[list(input())for i in range(N)]
-#     min = 21e9
-#     cnt = 0
-#     def abc(lev):
-#         global cnt,min
-#         if lev == N:
-#             if min>cnt:
-#                 min=cnt
-#             return
-#         for i in range(M):
-#             if lst[0][i]!='W':
-#                 lst[0][i]='W'
-#                 cnt+=1
-#         for i in range(M):
-#             if lst[1][i]!='R':
-#                 lst[1][i]='R'
-#                 cnt+=1
-#         for i in range(1,M-1):
-# name = ['A','B','C']
-# N=int(input())
-# path=['']*N
-# def dfs(lev):
-for i in range(1,4):
-    for j in range(1,4):
-        print('B')
+
+T = int(input())
+for test_case in range(1,T+1):
+    N,M = map(int,input().split())
+    lst = [list(map(int,input()))for i in range(N)]
+    answer=[[0,0,0,1,1,0,1],[0,0,1,1,0,0,1],[0,0,1,0,0,1,1],[0,1,1,1,1,0,1],[0,1,0,0,0,1,1],[0,1,1,0,0,0,1],[0,1,0,1,1,1,1],[0,1,1,1,0,1,1],[0,1,1,0,1,1,1],[0,0,0,1,0,1,1]]
+    starty,startx=0,0
+    num = ''
+    for i in range(N-5+1):
+        for j in range(M-56+1):
+            now = []
+            for k in range(j,j+7):
+                now.append(lst[i][k])
+                if now in answer:
+                    starty,startx=i,j
+
+
+
+
+
+    for i in range(8):
+        now = []
+        for j in range(startx,startx+7):
+            now.append(lst[starty][j])
+            for k in range(10):
+                if now == answer[k]:
+                    num += str(k)
+            startx=startx+7
+    print(num)
+
+
