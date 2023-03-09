@@ -1,0 +1,201 @@
+/* 기본 배경만 적용한 상태 */
+.basic-container {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #ccc;
+  }
+  
+  /* flex 적용 시 요소들이 가로로 정렬 */
+  .flex-container {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #ccc;
+    display: flex;
+
+  }
+  
+  /* column 변경 시 요소들이 세로로 정렬 */
+  .flex-container-column {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  /* main axis 의 시작 지점부터 item 이 시작 */
+  .flex-start {
+    justify-content: flex-start;
+
+  }
+  
+  /* main axis 기준으로 중앙 정렬 */
+  .center {
+    justify-content: center;
+
+  }
+  
+  /* main axis 끝 지점부터 정렬 */
+  .flex-end {
+    justify-content: flex-end;
+
+  }
+  
+  /* item 사이에 동일한 여백을 적용, 양 끝에는 여백이 없음 */
+  .space-between {
+    justify-content: space-between;
+  }
+  
+  /* item 사이에 동일한 여백을 적용, 양 끝에는 item 사이의 1/2 크기의 여백을 적용 */
+  .space-around {
+    justify-content: space-around;
+
+  }
+  
+  /* 요소 별로 다른 크기 적용 */
+  .first {
+    height: 10px;
+
+  }
+  
+  .second {
+    height: 40px;
+
+  }
+  
+  .third {
+    height: 80px;
+
+  }
+  
+  /* container의 교차 축을 채우기 위해 item 을 늘림 */
+  .stretch {
+    align-items: stretch;
+
+
+  }
+  
+  /* flex-wrap: 길이를 넘어갈 때 줄바꿈 사용 여부 */
+  /* nowrap: 줄바꿈을 하지 않고 범위를 넘어감 */
+  .nowrap {
+    flex-wrap: nowrap;
+
+  }
+  
+  /* wrap: 줄바꿈 적용 */
+  .wrap {
+    flex-wrap: wrap;
+
+  }
+  
+  /* wrap-reverse: 줄바꿈을 적용하지만, flex 항목 순서가 역방향으로 적용됨 */
+  .wrap-reverse {
+    flex-wrap: wrap-reverse;
+
+  }
+  
+  /* flex-grow: container 의 길이가 item 보다 클 경우 확대 기능 */
+  /* 기본값: 0 -> item 본연의 크기를 유지 */
+  .grow {
+    flex-grow: 0;
+  }
+  
+  /* 1이상을 주면 유연하게 item 이 늘어난다 */
+  /* 아래와 같이 설정하면 부모 요소의 크기를 1:2:3 비율로 나눈 길이만큼 item 이 늘어남 */
+  /* 모두 1로 바꿔보고 결과를 보자 */
+  /* inline 요소 보다 작은 비율로는 축소되지 않음 ex) 50,000 */
+  .grow1 {
+    flex-grow: 1;
+
+  }
+  
+  .grow2 {
+    flex-grow: 2;
+
+  }
+  
+  .grow3 {
+    flex-grow: 3;
+
+  }
+  
+  /* flex-shrink 는 grow 와 반대로 축소되는 비율을 설정 */
+  /* 기본값: 0 -> item 의 크기가 container 를 초과했을 때 줄어들 지 않는다. */
+  .shrink {
+    flex-shrink: 0;
+
+  }
+  
+  /* 각 비율에 맞게 item 의 길이가 줄어든다 */
+  .shrink1 {
+    flex-shrink: 1;
+
+  }
+  
+  .shrink2 {
+    flex-shrink: 2;
+
+  }
+  
+  .shrink3 {
+    flex-shrink: 3;
+
+  }
+  
+  /* flex-basis */
+  /* flex 아이템의 기본 크기를 설정 */
+  /* 기준축을 기준으로 크기를 지정 */
+  .flex-basis {
+    flex-basis: 100px;
+
+  }
+  
+  /* 위의 grow, shrink, basis 를 한 번에 설정하기 */
+  /* 몇 가지 키워드를 제공한다 */
+  .flex {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+  
+  }
+  
+  /* flex 에 배치될 순서를 적용 */
+  /* order 가 작을수록 앞쪽에 배치 */
+  .order0 {
+    order: 0;
+
+  }
+  
+  .order1 {
+    order: 1;
+
+  }
+  
+  .order2 {
+    order: 2;
+
+  }
+  
+  .order3 {
+    order: 3;
+
+  }
+  
+  /* 자주 사용되는 예시 */
+  /* 수평/수직 중앙 정렬 */
+  .flex-container2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    align-items: center;
+    height: 300px;
+    background-color:#ccc;
+    
+  }
+  
+  /* margin: auto 적용 시 남아있는 여백을 모두 마진으로 설정함 */
+  .margin-right {
+    margin-right: auto;
+  }
+  

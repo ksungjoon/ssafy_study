@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/style/9gi2ban_flexbox_answer.css"> -->
+    <link rel="stylesheet" href="/style/9gi2ban_flexbox_practice.css">
+
+    <title>Document</title>
+    <!-- 참고사이트 -->
+    <!-- 정리잘된블로그1: https://studiomeal.com/archives/197 -->
+    <!-- 정리잘된블로그2: https://armadillo-dev.github.io/css/what-is-flexbox/ -->
+    <!-- 네이버d2: https://d2.naver.com/helloworld/8540176#ch11 -->
+    <style>
+      h1 {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+
+      /* 상자 */
+      .flex-item {
+        margin: 10px;
+        padding: 15px;
+        width: 50px;
+        text-align: center;
+        background-color: white;
+        border: 3px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>기본</h1>
+    <div class="basic-container">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>flex 적용</h1>
+    <div class="flex-container">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>flex-direction: column</h1>
+    <div class="flex-container-column">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>justify-content: flex-start</h1>
+    <div class="flex-container flex-start">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>justify-content: center</h1>
+    <div class="flex-container center">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>justify-content: flex-end</h1>
+    <div class="flex-container flex-end">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>justify-content: space-around</h1>
+    <div class="flex-container space-around">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>justify-content: space-between</h1>
+    <div class="flex-container space-between">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <!-- 교차축 설정 -->
+    <h1>align-items: flex-start</h1>
+    <div class="flex-container flex-start">
+      <div class="flex-item first">item1</div>
+      <div class="flex-item second">item2</div>
+      <div class="flex-item third">item3</div>
+    </div>
+
+    <h1>align-items: center</h1>
+    <div class="flex-container center">
+      <div class="flex-item first">item1</div>
+      <div class="flex-item second">item2</div>
+      <div class="flex-item third">item3</div>
+    </div>
+
+    <h1>align-items: flex-end</h1>
+    <div class="flex-container flex-end">
+      <div class="flex-item first">item1</div>
+      <div class="flex-item second">item2</div>
+      <div class="flex-item third">item3</div>
+    </div>
+
+    <h1>align-items: stretch</h1>
+    <div class="flex-container stretch">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+    </div>
+
+    <h1>flex-wrap: nowrap</h1>
+    <div class="flex-container nowrap" style="width: 300px">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+      <div class="flex-item">item4</div>
+      <div class="flex-item">item5</div>
+    </div>
+
+    <h1>flex-wrap: wrap</h1>
+    <div class="flex-container wrap" style="width: 300px">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+      <div class="flex-item">item4</div>
+      <div class="flex-item">item5</div>
+    </div>
+
+    <h1>flex-wrap: wrap-reverse</h1>
+    <div class="flex-container wrap-reverse" style="width: 300px">
+      <div class="flex-item">item1</div>
+      <div class="flex-item">item2</div>
+      <div class="flex-item">item3</div>
+      <div class="flex-item">item4</div>
+      <div class="flex-item">item5</div>
+    </div>
+
+    <h1>flex-grow: 0</h1>
+    <div class="flex-container">
+      <div class="flex-item grow">0</div>
+      <div class="flex-item grow">0</div>
+      <div class="flex-item grow">0</div>
+    </div>
+
+    <h1>flex-grow: 비율 지정</h1>
+    <div class="flex-container">
+      <div class="flex-item grow1">1</div>
+      <div class="flex-item grow2">2</div>
+      <div class="flex-item grow3">3</div>
+    </div>
+
+    <h1>flex-shrink: 0</h1>
+    <div class="flex-container" style="width: 300px">
+      <div class="flex-item shrink" style="width: 100px">0</div>
+      <div class="flex-item shrink" style="width: 100px">0</div>
+      <div class="flex-item shrink" style="width: 100px">0</div>
+    </div>
+
+    <h1>flex-shrink: 비율 지정</h1>
+    <div class="flex-container" style="width: 300px">
+      <div class="flex-item shrink1" style="width: 100px">1</div>
+      <div class="flex-item shrink2" style="width: 100px">2</div>
+      <div class="flex-item shrink3" style="width: 100px">3</div>
+    </div>
+
+    <h1>flex-basis: 100px</h1>
+    <div class="flex-container">
+      <div class="flex-item flex-basis" style="width: 10px">1</div>
+      <div class="flex-item flex-basis" style="width: 100px">2</div>
+      <div class="flex-item flex-basis" style="width: 500px">3</div>
+    </div>
+  </body>
+
+  <h1>order</h1>
+  <div class="flex-container">
+    <div class="flex-item order3">
+      3<br />
+      DOM 순서는 첫번째
+    </div>
+    <div class="flex-item order0">0</div>
+    <div class="flex-item order1">1</div>
+    <div class="flex-item order2">2</div>
+  </div>
+
+  <h1>자주쓰이는 예제 - 수평/수직 중앙 정렬</h1>
+  <div class="flex-container2">
+    <div class="flex-item">center</div>
+  </div>
+
+  <h1>자주쓰이는 예제 - margin: auto</h1>
+  <div class="flex-container">
+    <div class="flex-item margin-right">margin</div>
+    <div class="flex-item">item</div>
+    <div class="flex-item">item</div>
+    <div class="flex-item">item</div>
+  </div>
+</html>

@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+
+    /* flex-direction: column; */
+
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    margin-top: 20px;
+    margin-right: 20px;
+
+    font-size: 50px;
+}
