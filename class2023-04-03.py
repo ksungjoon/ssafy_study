@@ -1,3 +1,5 @@
+# 우선순위 큐
+
 # import heapq
 #
 # arr = []
@@ -137,7 +139,7 @@
 
 
 import heapq
-
+#
 # 5       # 정점개수
 # 7       # 간선의 개수
 # 0 1 3   # 간선의 정보
@@ -167,11 +169,11 @@ heap=[] # 경유지를 뽑은 (우선순위큐로 뽑을) 힙 만들어 놓기
 
 
 def dijkstra(start):
-    heapq.heappush(heap,(start,0))  # 시작점index(첫 시작점을 첫 경유지로 놓기떄문), 비용(시작점->경유지까지)
+    heapq.heappush(heap,(0,start))  # 시작점index(첫 시작점을 첫 경유지로 놓기떄문), 비용(시작점->경유지까지)
 
     while heap: # 경유지 선택이 끝날때 까지
 
-        k,sk = heapq.heappop(heap)     # k 경유지  sk 경유지까지 비용(힙 안에 있는 (시작점->경유지))
+        sk,k = heapq.heappop(heap)     # k 경유지  sk 경유지까지 비용(힙 안에 있는 (시작점->경유지))
 
         if result[k]<sk: continue    # 이미 갱신 되어 있는 값이 뽑은 값 보다 작으면 비교할 필요 없음!!
 
@@ -179,7 +181,7 @@ def dijkstra(start):
             cost=sk+i[1] # cost=시작->경유  +  경유지에서 도착점 까지 가는 비용
             if cost<result[i[0]]: # cost: 시->경->도착     result[i[0]] 시작점 -> 도착
                 result[i[0]]=cost # 갱신 해주고
-                heapq.heappush(heap,(i[0],cost)) # 힙에 푸쉬!!
+                heapq.heappush(heap,(cost,i[0])) # 힙에 푸쉬!!
 
 dijkstra(start)
 
