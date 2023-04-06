@@ -1,131 +1,52 @@
-# N = int(input())
-# lst = [list(map(int,input().split()))for i in range(N)]
-# rd=[]
-# ru=[]
-# possible=0
-# Max = -21e9
-# cnt = 0
+# from collections import deque
+# T = int(input())
+# for test_case in range(1,T+1):
+#     V,E = map(int,input().split())
+#     lst = [list(map(int,input().split()))for i in range(E)]
+#     S,G = map(int,input().split())
+#     used = [0]*(V+1)
+#     arr = [[0]*(V+1)for i in range(V+1)]
+#     for i in range(E):
+#         arr[lst[i][0]][lst[i][1]]=1
+#         arr[lst[i][1]][lst[i][0]]=1
 #
-# for i in range(N):
-#     for j in range(N):
-#         if lst[i][j]==1 and i+j not in ru and i-j not in rd:
-#             ru.append(i+j)
-#             rd.append(i-j)
-#             cnt +=1
-# print(cnt)
+#     def bfs (st):
+#         que = deque()
+#         que.append((st,0))
+#         while que:
+#             now ,cnt = que.popleft()
+#             if now ==G:
+#                 return cnt
+#             for i in range(V+1):
+#                 if used[i]==0 and arr[now][i]==1:
+#                     used[i]=1
+#                     que.append((i,cnt+1))
+#         return 0
+#     used[S]=1
+#     print(f'#{test_case} {bfs(S)}')
 
-
-# for i in range(N):
-#     for j in range(N):
-#         if lst[i][j]==1:
-#             possible+=1
-# def dfs(lev):
-#     global cnt,Max
-#     if flag == 1:
-#         if Max<cnt:
-#             Max=cnt
-#
-#         return
-#     for i in range(N):
-#         for j in range(N):
-#             lev+=1
-#             if lst[i][j]==1 and (i+j) not in ru and (i-j) not in rd:
-#                 lst[i][j]=0
-#                 ru.append(i+j)
-#                 rd.append(i-j)
-#                 dfs(lev,possible)
-#
-#                 ru.remove(i+j)
-#                 rd.remove(i-j)
-
-
-
-# N = int(input())
-# lst = [list(map(int,input().split()))for i in range(N)]
-# inf = 21e9
-# arr = [[inf]*N for _ in range(N)]
-# for i in range(N):
-#     for j in range(N):
-#         cnt = 0
-#         if lst[i][j]==1:
-#             diry=[-1,-1,1,1]
-#             dirx=[-1,1,-1,1]
-#             for z in range(4):
-#                 for k in range(1, N):
-#                     dy = diry[z]*k+i
-#                     dx = dirx[z]*k+j
-#                     if 0<=dy<N and 0<=dx<N:
-#                         if lst[dy][dx]==1:
-#                             cnt+=1
-#             arr[i][j]=cnt
-# print(arr)
-# for k in range(N//2*4):
-#     for i in range(N):
-#         for j in range(N):
-#             flag = 0
-#             if arr[i][j]==k:
-#                 diry = [-1, -1, 1, 1]
-#                 dirx = [-1, 1, -1, 1]
-#                 for z in range(4):
-#                     for h in range(1, N):
-#                         dy = diry[z] * h + i
-#                         dx = dirx[z] * h + j
-#                         if 0 <= dy < N and 0 <= dx < N:
-#                             if lst[dy][dx]==2:
-#                                 flag=1
-#                                 break
-#                     if flag==1:
-#                         break
-#                 if flag ==1:
-#                     continue
-#                 else:
-#                     lst[i][j]=2
-# result = 0
-# for i in range(N):
-#     for j in range(N):
-#         if lst[i][j]==2:
-#             result+=1
-# print(lst)
-# print(result)
+from collections import deque
+T = int(input())
+for test_case in range(1,T+1):
+    N,M = map(int,input().split())
+    lst = list(map(int,input().split()))
+    que = deque()
+    result = []
+    for i in range(N):
+        que.append((i,lst[i]))
+    while que:
+        num,che = que.popleft()
+        che = che//2
+        if che !=0:
+            que.append((num,che))
+        else:
+            if N==M:
+                continue
+            result.append(num)
+            que.append((N,lst[N]))
+            N+=1
+    print(result)
 
 
 
-def check(idx):
-    c = idx%2
-    i, j = idx//n, idx%n
 
-    for d in range(4):
-        x, y = i+dx[d], j+dy[d]
-        while 0<=x<n and 0<=y<n:
-            if visited[x*n + y]:
-                return False
-            x += dx[d]
-            y += dy[d]
-    return True
-
-def dfs(idx, c, cnt):
-    if n*n-idx+1+cnt <= ans[c] or idx >= n*n:
-        return
-
-    ans[c] = max(ans[c], cnt)
-    x, y = idx//n, idx%n
-    j = y
-    for i in range(x, n):
-        while j < n:
-            v = i*n + j
-            if not visited[v] and chess[i][j] == 1 and check(v):
-                visited[v] = True
-                dfs(v, c, cnt+1)
-                visited[v] = False
-            j += 2
-        j = (c+1)%2 if i%2 == 0 else c
-
-n = int(input())
-chess = [list(map(int, input().split())) for _ in range(n)]
-dx, dy = [1, -1, 1, -1], [1, 1, -1, -1]
-visited = [False] * (n**2)
-ans = [0, 0]
-
-dfs(0, 0, 0)
-dfs(1, 1, 0)
-print(sum(ans))

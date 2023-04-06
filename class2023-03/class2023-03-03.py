@@ -1,31 +1,31 @@
-# from collections import deque
-# arr =[[0,0,0,0,1],[1,0,1,0,1],[1,0,1,0,0],[0,0,0,0,0]]
-# diry = [-1,0,0,1]
-# dirx = [0,-1,1,0]
-# cnt = 0
-# def abc(sty,stx,edy,edx):
-#     que =deque()
-#     que.append([sty,stx,0])
-#     used = [[0] * 5 for i in range(4)]
-#     used[sty][stx]=1
-#     while que:
-#         now =que.popleft()
-#         yy,xx,lev = now[0],now[1],now[2]
-#         if edy== yy and edx ==xx:
-#             return lev
-#         for i in range(4):
-#             dy =diry[i]+yy
-#             dx =dirx[i]+xx
-#             if 0<=dy<4 and 0<=dx<5:
-#                 if used[dy][dx] ==0:
-#                     if arr[dy][dx]==0:
-#                         used[dy][dx]=1
-#                         que.append([dy,dx,lev+1])
-#
-# cnt += abc(0,0,3,0)
-# cnt += abc(3,0,3,4)
-#
-# print(cnt)
+from collections import deque
+arr =[[0,0,0,0,1],[1,0,1,0,1],[1,0,1,0,0],[0,0,0,0,0]]
+diry = [-1,0,0,1]
+dirx = [0,-1,1,0]
+cnt = 0
+def abc(sty,stx,edy,edx):
+    que =deque()
+    que.append([sty,stx,0])
+    used = [[0] * 5 for i in range(4)]
+    used[sty][stx]=1
+    while que:
+        now =que.popleft()
+        yy,xx,lev = now[0],now[1],now[2]
+        if edy== yy and edx ==xx:
+            return lev
+        for i in range(4):
+            dy =diry[i]+yy
+            dx =dirx[i]+xx
+            if 0<=dy<4 and 0<=dx<5:
+                if used[dy][dx] ==0:
+                    if arr[dy][dx]==0:
+                        used[dy][dx]=1
+                        que.append([dy,dx,lev+1])
+
+cnt += abc(0,0,3,0)
+cnt += abc(3,0,3,4)
+
+print(cnt)
 #
 # 교수님이 푼거
 #
