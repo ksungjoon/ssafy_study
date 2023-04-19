@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 정의방법
+        // 함수 선언식
+        // 함수 표현식
+
+
+        // 함수 선언식
+        function 함수명(){
+            // do something 
+        }
+
+        // 함수 표현식
+        const 함수명 = function(){
+            // do something 
+        }
+
+
+        // 매겨변수와 인자의 개수 불일치 허용한다.
+        const threeArgs = function(arg1,arg2,arg3){
+            return[arg1,arg2,arg3]
+        }
+
+        threeArgs()
+
+        // spread syntax(Rest parameters)
+        const restArgs = function(arg1,arg2, ...restArgs){
+            return[arg1,arg2,restArgs]
+        }
+
+        restArgs(1,2,3,4,5)
+        
+
+        // arrow function  (화살표 함수)
+
+        const arrow1 = function (name) {
+            return `hello, ${name}`
+        }
+
+        // 1 .  function 키워드 생략 가능
+        const arrow2 = (name) =>{return `hello, ${name}`}
+
+        // 2 . 인자가 1개일 경우에만 () 생략 간으
+        const arrow3 = name => {return `hello, ${name}`}
+
+        // 3. 함수 바디가 return을 포함한 표현식 1개일 경우에 {} & return 삭제 가능
+        const arrow4 = name => `hello, ${name}`
+
+        // 화살표 함수의 응용
+
+        
+        // 1. 인자가 없다면? () or _ 로 표시 가능
+        let noArgs = ()=> 'No args'
+        noArgs =  _ => 'noArgs'
+
+        // 2_1. object를 return 한다면 
+        let returnObject = () => {return{key :'value'}} // return을 명시적으로 적어준다
+
+        //2_2. return을 적지 않으려면 괄호를 붙여야함
+        returnObject = () => ({key :'value'})
+
+        // this
+
+        // 1. 단순 호출
+
+        const myFunc = function(){
+            console.log(this)
+        }
+
+        // 브라우저
+        myFunc()//window
+
+        // 2. Method
+
+        const myObj = {
+            data : 1,
+            myFunc(){
+                console.log(this) // myObj
+                console.log(this.data) // 1
+            }
+        }
+
+        myObj.myFunc() // myObj
+        
+    </script>
+    
+    
+</body>
+</html>
