@@ -1,0 +1,134 @@
+<!-- 네이버 로그인 
+
+-> id
+id가 id인 input을 가져오기
+const id =document.querySelector("#id")
+id.value = "test1234"
+
+const password = document.querySelector("#pw")
+document.querySelector("input[type=password]")
+password.value = "chicken"
+
+const button = document.querySelector(".btn_login")
+
+. -> class 
+
+메가박스 영화 리스트 가져오기 
+querySelectorAll 
+
+특정 선택자에 해당되는 값들을 배열(유사배열)에 담아온다.
+
+메가박스 사이트의 타이틀을 가져온다. 
+
+공통 속성을 분석 
+
+.tit-area > .tit
+const lists =document.querySelectorAll(".tit-area > .tit");
+
+텍스트가 들어있는 element들은 가져온 상태!! 
+여기서 텍스트만 뽑아서 출력하고싶다.
+innerText
+
+textContent 
+
+for(let i=0; i <lists.length; i++){
+    console.log( lists[i].innerText );
+}
+ -->
+
+---------------------------------------------------------------------------------------------------------
+	
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- ul>li*10 -->
+  <ul>
+    <li>가</li>
+    <li>나</li>
+    <li>다</li>
+    <li>라</li>
+    <li>마</li>
+    <li>바</li>
+    <li>사</li>
+    <li>아</li>
+    <li>자</li>
+    <li>카</li>
+  </ul>
+  <script>
+    const lists = document.querySelectorAll("ul>li");
+    console.log(lists);
+
+    // for(let i=0; i<lists.length; i++){
+    //   console.log(lists[i]);
+    //   lists[i].innerText = lists[i].innerText + "기";
+    // }
+
+    // querySelectorAll 은 완벽한 배열 X 
+    // Array.from 으로 감싸고 배열 메서드 사용 
+
+    // lists.map(li => console.log(li)); // 안되는 코드
+    Array.from(lists).map(li =>console.log(li));
+
+    // 작성한 innerText만 담긴 배열을 만들기
+    const results = Array.from(lists).map(li =>li.textContent + "A");
+    console.log(results);
+
+
+  </script>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------
+
+<!-- 
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+    <div class="hello hello2" id="hello3" style="color:red;">
+        안녕하세요 
+    </div>
+
+    <button>클릭!!</button>
+    <img src="https://cdn.pixabay.com/photo/2014/01/24/04/36/roasted-250875__340.jpg">
+    
+    <script>
+        // getAttribute -> 속성을 가져오기
+        // href, id, class, style, src -> 전부 속성
+        // setAttribute  -> 속성을 설정
+        const div = document.querySelector('div');
+        // div.getAttribute("class")
+        // div.setAttribute("style", "color:blue;") 
+
+        // 버튼을 만들기
+        const button = document.querySelector("button");
+        // img 태그를 넣을것
+        // 버튼을 클릭했을경우 기존 이미지를 다른 img로 갈아치우기
+        const chicken_url = "https://cdn.pixabay.com/photo/2022/06/26/09/40/chicken-broasted-7284943__340.png"
+
+        const img = document.querySelector('img');
+
+        button.addEventListener('click', function(){
+        console.log("test");
+        console.log(img.getAttribute('src'));
+        img.setAttribute('src', chicken_url);
+        })
+
+
+
+    </script>
+
+</body>
+</html> -->
