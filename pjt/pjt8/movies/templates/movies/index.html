@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Movies</h1>
+  <br>
+  <hr>
+  
+  {% for movie in movies %}
+    <h3>{{movie.title}}</h3>
+    <br>
+    <img src={{movie.poster_path}}>
+    <br>
+    <a href="{% url 'movies:detail' movie.pk %}">[DETAIL]</a>
+    <hr>
+
+
+    
+  {% endfor %}
+    
+
+
+{% endblock %}
