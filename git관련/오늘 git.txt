@@ -1,0 +1,177 @@
+복습겸 연습
+파일만들고 $ git init 하기
+
+$ echo test입니다.>a.txt
+git status 해보기 -> 언트랙트 파일있으니까 add 하라고 메시지 나온다
+
+$ git add a.txt 통해서 tract 파일이 되고 스테이징 에어리어에 올라가 있으면
+git commit -m "first commit" 작성해 보기
+git log 로 확인해보기
+
+원격저장소 다시 등록
+$ git remote add origin https://github.com/sfminho/123.git
+
+$ git push origin master   그다음부터는 git push만.
+
+만약 버그 메시지 뜨면 (! [rejected] master -> master (fetch first)) 에러 메시지가 뜬다면
+$ git push -u origin +master
+
+==============================
+
+오늘 수업 내용
+
+* restore
+* remend
+* reset
+* revert
+* branch
+* merge
+
+==============================
+
+* restore 사용법 1 -> 커밋 후 파일수정을 너무 많이 반복했더니 처음 커밋 했을 떄의 코드로 코드를 원상복구 하고 싶을떄
+
+a.txt파일에 아무 글자나 넣고 add 그리고 commit 까지 해보자.
+
+commit 이 완료 되었다면!!
+
+a.txt 파일 내용을 수정 하고 저장하자 
+
+그러면 modified 상태가 될 것이다. 
+
+$ git restore a.txt
+
+a.txt 파일 내용이 최근에 커밋 했을 당시로 코드들이 원상복구 된다.
+
+==============================
+
+* restore 사용법 2. 커밋 후 수정된 modified 파일을 staging 에서 working area로 내릴 때 사용
+   working area로 파일을 내리려도 깃이 추적을하고있는 modified 상태가 된다.
+
+
+그런데 stating area에서 working area 으로 내리는 명령어가 더 있다.
+방금과 같은 restore도 있고
+
+1. git restore --staged {파일 이름} 
+2. git rm	--cached {파일 이름}
+
+두 개의 차이는 공통점은 파일을 staging area에서 working area로 내릴 때 사용
+차이점은 modified 파일을 내릴 때
+
+1. git restore --staged {파일 이름} 를 사용하면 파일을 working으로 내린 후 파일 상태가 깃이 추적을 하는 tracked 파일이 되고
+
+2. git rm	--cached {파일 이름} 을 사용하면 파일을 working으로 내린 후 파일 상태가 처음 새로 생성된 파일과 같은 untracked 파일이 된다는 차이가 있다.
+
+테스트 해보자. 
+
+$ git add .
+$ git restore --staged a.txt
+$ git status (modified상태로 working area에 파일이 있음)
+
+$ git add .
+$ git rm --cached a.txt
+$ git status (untracked상태로 working area에 파일이 있음)
+
+따라서 결론은 커밋이력이 있는 파일을 내릴 경우에는 
+git restore --staged {파일 이름} 을 사용하면 된다.
+(커밋 이력이 없는경우는 아무거나 사용해도 상관 없음)
+
+참고로 git reset -- a.txt 이렇게 unstaged로 내릴 수 도 있다 하지만
+reset은 혼자에서만 작업할때 사용하는 것을 권장한다.
+협업을 하고 있는 브랜치에서 reset사용을 하지 말아라! 
+
+
+==============================
+
+
+이번에는 커밋 할 때 메시지를 적는데 커밋 메시지를 변경하는 것을 해보자
+.git 지우고 a.txt만 남기고 git init 하자
+
+git add .
+git commit -m '1'
+git log
+
+자 이제 커밋 메시지를 2로 변경하고 싶다면?
+amend를 사용하면 된다. 사용법은 아래와 같다.
+
+$ git commit --amend -m "2"
+$ git log
+
+커밋 메시지가 변경 되었다.
+
+amend를 사용 할 때가 또 있는데
+커밋 할때 b.txt 파일 하나를 같이 커밋한다는 것을 깜빡해서 다시 커밋을 해야 한다면? 
+이때 a 랑 b.txt랑 다시 커밋을 하는 것이 아니라 amend 사용한다.
+
+$ echo 이것도 추가해야 하는데 > b.txt
+$ git add .
+$ git commit --amend -m '2'
+$ git log
+
+즉 누락된 b.txt를 원래 의도대로  a.txt랑 b.txt랑 같이 commit 하려고 했던것 처럼 커밋을 수정 할 수 있다.
+amend를 봤다면 그 다음에는 reset이랑 revert 명령어도 살펴 보자.
+
+=====================
+
+
+
+
+git reset / rever
+
+파일이 업데이트 되면서 커밋하고 또 커밋하고.. 커밋을 여러번 했는데
+이전의 커밋상태로 돌리고 싶을때 사용하는 것이 reset 과 revert 다.
+
+결론 부터 말하면 reset / rever 둘다 이전 커밋을 다루지만
+github에 다른사람 코드도 공유하고 협업을 하고 있다면 revert 를 사용하고
+나혼자만 해당 브랜치를 사용하고 있다면 그때는 reset을 써도 상관없다.
+
+reset부터 살펴보자. 다시 git을 초기화 하고 a.txt만 남기자.
+커밋을 여러번 할 것이다.
+$ git init
+
+$ git add a.txt
+$ git commit -m '1'
+$ git log
+
+$ git add b.txt
+$ git commit -m '2'
+
+$ git add c.txt
+$ git commit -m '3'
+$ git log --oneline
+
+총 커밋을 3번 했다. 지금 커밋 메시지가 3인 상태인데 
+커밋 메시지가 1인 상태로 돌아가 보도록 하겠다.
+
+git reset --hard ['1'의 해시코드]
+
+1번 커밋 할때로 돌아가 버렸다. 그리고 
+
+$ git log --oneline
+
+찍으면 커밋 했던 이력이 사라졌을 뿐더러 1번 커밋 할때는 
+b.txt c.txt파일이 없었으니까 모두 삭제가 되었다.
+
+그런데 커밋을 과거로 돌아가고 싶지만 파일은 삭제하기 싫다면?
+hard 대신 옵션을 soft로 주면 b.txt  c.txt 파일은 삭제 되는것이 아니라 staging area로 돌려 놓아졌을 것이다.
+다시 테스트 해보자
+
+$ git add b.txt
+$ git commit -m '2'
+
+$ git add c.txt
+$ git commit -m '3'
+$ git log --oneline
+
+$ git reset --soft ['1'의 해시코드]
+b 랑 c.txt 파일이 삭제 되지 않았다.
+
+$ git status 
+
+b 랑 c.txt 파일이 staging area 에 있다는 것을 확인할 수 있다.
+
+따라서 사용법은 git reset --option [돌아갈커밋해시] 를 해주면 되는데
+option에 hard를 하면 이전커밋으로 돌아가고 파일은 다 지워진다.
+soft를 하면 이전 커밋 으로 돌아가고 파일은 staying 으로 내려간다.
+mixed를 하면  이전 커밋 으로 돌아가고 파일은 working area 로 돌아간다.
+

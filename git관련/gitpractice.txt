@@ -1,0 +1,35 @@
+restore 사용법이 2가지 있는데
+
+1. 커밋 후 파일 수정하면 파일이 modified 상태로 있는데
+   수정을 반복하다가 최근에 커밋했을떄 상태로 돌아가기
+
+2. 커밋 후 파일 수정하면 staging area에 있는 modified 상태의 파일을
+   working area로 내릴때 사용가능
+   git restore --staged 파일명      
+
+그런데 staging area에 있는 modified 파일을
+   working area로 내릴때 사용 가능한 다른 명령어도 존재함
+  그중 하나를 소개먼저 하자면
+  reset 이 있고  git rm --cached 파일명이 있습니다.
+  reset은 이따가 보고
+
+staging area에 있는파일을 working area로 내릴때
+사용하는 명령어가 
+2-1. git rm --cached    (working으로 내린 파일이 untract file로 인식)
+2-2. git restore --staged 파일명   둘이 차이점
+     (working으로 내린 파일이 modified(tracted 상태로 깃이 추적관리함)
+
+커밋을 할때 커밋 메시지를 적는데
+잘못적어서 커밋 메세지를 수정하고 싶을때 
+amend 사용가능
+
+amend를 언제 많이 사용하냐면
+커밋시 파일 누락했을 경우 다시 커밋하고 싶을때
+
+revert/ reset 과거 커밋 이력으로 되돌릴때
+결론부터 보자면 둘다 과거 커밋 이력으로 되돌릴때 (회귀할때 사용하는데
+차이점
+reset - 과거 커밋 시점으로 돌아가는 동시에 커밋 이력들이 다 삭제됨
+	그래서 한번더 강조하지만 협업시 정말정말 조심히 사용
+revert - 과거에 커밋했던것을 취소하는 동시에 취소한 이력이 새로 커밋이 된다.
+	협업시 reset보다는 revert사용을 추천함
